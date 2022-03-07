@@ -1,0 +1,1 @@
+export const clickLockPersonList = [2009864, 2021638, 2021639]
