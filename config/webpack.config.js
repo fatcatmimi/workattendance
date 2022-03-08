@@ -335,6 +335,7 @@ module.exports = function (webpackEnv) {
         ]),
       ],
     },
+    ignoreWarnings: [/Failed to parse source map/],
     module: {
       strictExportPresence: true,
       rules: [

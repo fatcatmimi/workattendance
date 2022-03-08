@@ -132,7 +132,7 @@ export default class Detail extends React.Component {
                         pagination={false}
                         rowKey={'PersonId'}
                         loading={loading === 1}
-                        scroll={{ y: 300 }}
+                        scroll={{ y: 300, x: true }}
                         size='small'
                         bordered={true}
 
@@ -171,7 +171,7 @@ export default class Detail extends React.Component {
                         rowKey={'PersonId'}
                         rowClassName={() => 'editable-row'}
                         loading={loading === 2}
-                        // scroll={{ y: 1000 }}
+                        scroll={{ y: 500, x: 'max-content' }}
                         size='small'
                         bordered={true}
                     >
