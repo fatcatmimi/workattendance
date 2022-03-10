@@ -125,15 +125,14 @@ export default class Detail extends React.Component {
                 <Button type="primary" icon={<CalculatorOutlined />} onClick={this.handleCalculateButton}>计算</Button>
             </Space>
         } style={{ height: '100 %' }}>
-            <Space direction="vertical" size={'large'}>
+            <Space direction="vertical" size={'large'} style={{ width: '99%' }}>
                 <div>
                     <Table
                         dataSource={detailData}
                         pagination={false}
                         rowKey={'PersonId'}
                         loading={loading === 1}
-                        scroll={{ y: 300, x: true }}
-                        size='small'
+                        scroll={{ y: 300, x: 'max-content' }}
                         bordered={true}
 
                     >
@@ -171,8 +170,7 @@ export default class Detail extends React.Component {
                         rowKey={'PersonId'}
                         rowClassName={() => 'editable-row'}
                         loading={loading === 2}
-                        scroll={{ y: 500, x: 'max-content' }}
-                        size='small'
+                        scroll={{ y: 300, x: 'max-content' }}
                         bordered={true}
                     >
                         <Column title="编号" dataIndex="PersonId" key="PersonId" align="center" />

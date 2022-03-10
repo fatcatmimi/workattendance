@@ -75,7 +75,10 @@ export const EditableCell = ({
                     onBlur={save}
                     allowClear={false}
                 /> :
-                    <InputNumber ref={inputRef} onPressEnter={save} onBlur={save} style={{ width: 200 }} />
+                    <InputNumber
+                        ref={inputRef}
+                        onPressEnter={save}
+                        onBlur={save} style={{ width: 150 }} />
                 }
             </Form.Item>
         ) : (
