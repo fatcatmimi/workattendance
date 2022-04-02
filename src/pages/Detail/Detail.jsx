@@ -120,7 +120,7 @@ export default class Detail extends React.Component {
                 <Button type="primary"
                     icon={<LockOutlined />}
                     onClick={this.handleLockButton}
-                    disabled={!(window.personId === 2009864 && this.isLocked === 0)}
+                    disabled={!(parseInt(window.personId) === 2009864 && parseInt(this.isLocked) === 0)}
                 >一键锁定</Button>
                 <Button type="primary" icon={<CalculatorOutlined />} onClick={this.handleCalculateButton}>计算</Button>
             </Space>
@@ -134,35 +134,37 @@ export default class Detail extends React.Component {
                         loading={loading === 1}
                         scroll={{ y: 300, x: 'max-content' }}
                         bordered={true}
-
+                        size={'small'}
                     >
-                        <Column title="编号" dataIndex="PersonId" key="PersonId" align="center" />
-                        <Column title="姓名" dataIndex="PersonName" key="PersonName" align="center" />
-                        <Column title="入职时间" dataIndex="HireDate" key="HireDate" align="center" />
+                        <Column title="编号" dataIndex="PersonId" key="PersonId" align="center" width={100} />
+                        <Column title="姓名" dataIndex="PersonName" key="PersonName" align="center" width={100} />
+                        <Column title="入职时间" dataIndex="HireDate" key="HireDate" align="center" width={100} />
                         {this.isRight ?
                             <>
-                                <Column title="工龄系数" dataIndex="AgeRatio" key="AgeRatio" align="center" />
-                                <Column title="个人系数" dataIndex="PersonRatio" key="PersonRatio" align="center" />
+                                <Column title="工龄系数" dataIndex="AgeRatio" key="AgeRatio" align="center" width={80} />
+                                <Column title="个人系数" dataIndex="PersonRatio" key="PersonRatio" align="center" width={80} />
                             </>
                             : null
 
                         }
                         <Column title="阶段系数" dataIndex="StageRatio" key="StageRatio" align="center" />
-                        <Column title="工作总时长(小时)" dataIndex="AllTime" key="AllTime" align="center" />
-                        <Column title="非工作日加班(时长)" dataIndex="ValidOverTime" key="ValidOverTime" align="center" />
-                        <Column title="工作日额外工作(时长)" dataIndex="ExtraTime" key="ExtraTime" align="center" />
+                        <Column title="工作总时长(小时)" dataIndex="AllTime" key="AllTime" align="center" width={100} />
+                        <Column title="非工作日加班(时长)" dataIndex="ValidOverTime" key="ValidOverTime" align="center" width={100} />
+                        <Column title="工作日额外工作(时长)" dataIndex="ExtraTime" key="ExtraTime" align="center" width={120} />
                         <Column title="应该上班总天数" dataIndex="WorkingDayCnt" key="WorkingDayCnt" align="center" />
                         <Column title="实际上班总天数" dataIndex="WorkingDayAct" key="WorkingDayAct" align="center" />
-                        <Column title="正常" dataIndex="Normal" key="Normal" align="center" />
-                        <Column title="缺勤" dataIndex="Absence" key="Absence" align="center" />
+                        <Column title="正常" dataIndex="Normal" key="Normal" align="center" width={50} />
+                        <Column title="缺勤" dataIndex="Absence" key="Absence" align="center" width={50} />
                         <Column title="迟到/早退" dataIndex="LateOrLeave" key="LateOrLeave" align="center" />
                         <Column title="请假" dataIndex="Holiday" key="Holiday" align="center" />
                         <Column title="出差/外出" dataIndex="TravelOrOut" key="TravelOrOut" align="center" />
                         <Column title="打卡过失" dataIndex="AttendMiss" key="AttendMiss" align="center" />
-                        <Column title="最终系数" dataIndex="FinalRatio" key="FinalRatio" align="center" />
+                        <Column title="额外工时系数" dataIndex="ExtraHourRatio" key="ExtraHourRatio" align="center" width={120} />
+                        <Column title="工时系数" dataIndex="HourRatio" key="HourRatio" align="center" width={100} />
+                        <Column title="最终系数" dataIndex="FinalRatio" key="FinalRatio" align="center" width={100} />
                     </Table>
                 </div>
-                <div style={{ marginTop: '100px' }}>
+                <div style={{ marginTop: '100px', width: '80%' }}>
                     <Table
                         components={components}
                         dataSource={calculatData}
@@ -172,10 +174,11 @@ export default class Detail extends React.Component {
                         loading={loading === 2}
                         scroll={{ y: 300, x: 'max-content' }}
                         bordered={true}
+
                     >
-                        <Column title="编号" dataIndex="PersonId" key="PersonId" align="center" />
-                        <Column title="姓名" dataIndex="PersonName" key="PersonName" align="center" />
-                        <Column title="苦劳系数" dataIndex="FinalRatio" key="FinalRatio" align="center" />
+                        <Column title="编号" dataIndex="PersonId" key="PersonId" align="center" width={100} />
+                        <Column title="姓名" dataIndex="PersonName" key="PersonName" align="center" width={100} />
+                        <Column title="苦劳系数" dataIndex="FinalRatio" key="FinalRatio" align="center" width={100} />
                         <Column title="可申报非工作日加班(时长)"
                             dataIndex="ApplyValidOverTime"
                             key="ApplyValidOverTime"
